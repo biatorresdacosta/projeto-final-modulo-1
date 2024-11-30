@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio web dev</title>
+
+  <link rel="stylesheet" href="index.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+
+
+  <style>
+    body {
+      
+      margin: 120px; 
+      background-color: var(--background-secondary);
+    }
+
+
+  h1 {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+}
+
+ p {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+
+
+
+    .galeria {
+  
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px; /*espaço entre imagens*/
+      padding: 80px 0;
+      justify-content: center;
+    }
+
+    .galeria img {
+      flex: 1 1 200px; /* flex-grow, flex-shrink e flex-basis ::::: começa com 200px de largura, mas pode ser ajustado pelo grow ou shrink dependendo do espaço disponível no contêiner.*/
+      max-width: calc(25%-20px); /* cada imagem vai ocupar até 25% da largura da galeria, subtraindo os 20px do gap*/
+      height: auto; /*a altura fica ajustavel com base no conteudo ou no container */
+      min-height: 200px;
+      max-height: 400px;
+      object-fit: cover; /*a imagem preenche o espaço sem distorcer*/
+    }
+  </style>
+</head>
+
+
+
+
+<body>
+
+  <nav>
+    <div class="logo"> Birbs </div>
+    <div class="nav_items">
+      <a href="index.html">Início</a>
+      <a href="#sobre">Sobre mim</a>
+      <a href="contato.html">Contato</a>
+      <a href="blog.html">Blog</a>
+    </div>
+  </nav>
+
+
+  <h1>Estes é o cabeçalho</h1>
+  <p>este é um parágrafo</p>
+  
+  <div class="galeria">
+    <img src="https://i.pinimg.com/564x/6e/d9/19/6ed91947967463d7a05e39bda043e693.jpg" alt="">
+    <img src="https://i.pinimg.com/564x/1c/8c/35/1c8c355342a87c42925ef54145ad6e60.jpg" alt="">
+    <img src="https://i.pinimg.com/564x/c4/2b/cb/c42bcbfd82bea0e79f197301beffd678.jpg" alt="">
+    <img src="https://i.pinimg.com/564x/35/dd/9a/35dd9a65cc1c05694b2450c0dc659310.jpg" alt="">
+    <img src="https://i.pinimg.com/564x/95/3d/3e/953d3e310f6ab30933d8670d0057f346.jpg" alt="">
+    <img src="https://i.pinimg.com/564x/b9/75/08/b97508368f801471fa88fb608a03bf56.jpg" alt="">
+    <img src="https://i.pinimg.com/564x/ba/f3/16/baf316a732f15f190f4dfb9ac11f486f.jpg" alt="">
+    <img src="https://i.pinimg.com/564x/1d/7e/5f/1d7e5f42491d149a6658f0943bf257de.jpg" alt="">
+
+
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+

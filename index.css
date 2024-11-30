@@ -1,0 +1,242 @@
+* {
+  /*o asterisco funciona como um seletor global q seleciona todos os elementos do html, ele é útil para aplicar estilos básicos a todos os elementos, como margens ou padding.*/
+  box-sizing: border-box; /*define que o calculo da L e A dos elementos deve incluir o padding e a borda. evitando que o elemento "cresça" ao adicionar esses elementos. Isso facilita o controle do layout, especialmente em grids e layouts responsivos.*/
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+body {
+  margin: 80px;
+  background-color:#f7faef;;
+}
+
+:root {
+  /*representa apenas o elemento raiz <html>, nao aplicando diretamente estilos a todos os elementos. é mais usado para definir variáveis globais acessíveis em todo o CSS.*/
+  --primary-color: #ce96d6;
+  --secondary-color: #cef7e5;
+  --accent-color: #e6b4ad;
+  --background-color-primary: #addfe6;
+  --background-color-secondary: #f7faef;
+  --text-color: #4a5953;
+  --font-size-big: 32px;
+  --font-size-medium: 24px;
+  --font-size-small: 16px;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%; /* Faz a navbar ocupar toda a largura da tela */
+  height: 80px;
+  background: var(--background-color-secondary);
+  display: flex;
+  justify-content: space-between; /* Espaça logo e nav_items */
+  align-items: center; /* Centraliza verticalmente os itens */
+  padding: 0rem calc((100vw - 1300px) / 2); /* Margens laterais */
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color); /* Define a cor para a logo */
+}
+
+.nav_items {
+  display: flex; /* Coloca os links em linha */
+  gap: 2rem; /* Espaçamento fixo entre os itens */
+}
+
+nav a {
+  text-decoration: none; /* Remove sublinhado padrão dos links */
+  color: var(--primary-color);
+  padding: 0 0.5rem; /* Pequeno espaçamento interno horizontal */
+}
+
+nav a:hover {
+  color: var(--accent-color); /* Cor ao passar o mouse */
+}
+
+.hero {
+  background: var(--background-color-primary);
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /*fractional unit = fração do espaço disponível dentro de um container grid*/
+  height: 95vh; /*viewport height = area visivel da janela*/
+  padding: 0rem calc((100vw - 1300px) / 2);
+}
+
+.column-left {
+  display: flex;
+  flex-direction: column; /* Define a direção dos itens filhos dentro do container. Com column, os itens serão organizados em uma coluna (um embaixo do outro), em vez de uma linha.*/
+  justify-content: center; /*Alinha os itens filhos verticalmente no centro do container.*/
+  align-items: flex-start; /*Alinha os itens filhos horizontalmente ao início do container*/
+  color: var(--text-color);
+  padding: 0rem 2rem;
+}
+
+.column-left h1 {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+}
+
+.column-left p {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.column-right video {
+  opacity: 100%;
+}
+
+.column-right video:hover::after { /*NÃO DEU CERTO :(*/
+  content: url("./regador.png");
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 24px;
+}
+
+
+
+button {
+  padding: 1rem 3rem;
+  font-size: 1rem;
+  border: none;
+  color: var(--text-color);
+  background: #e6b4ad;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+button:hover {
+  background: var(--primary-color);
+  color: var(--background-color-secondary);
+}
+
+.column-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem 2rem;
+}
+
+.hero-image {
+  width: 100%;
+  /* nao especifiquei a height pq se nao a imagem fica deformada*/
+}
+
+#portfolio {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 24px;
+  padding: 0rem calc((100vw - 1300px) / 2);
+}
+
+.area-container {
+  text-align: center;
+  padding: 24px;
+  font-size: 16px;
+}
+
+.area-container :hover {
+  opacity: 40%;
+}
+
+.area-container img {
+  width: 75%;
+  height: 75%;
+  object-fit: cover;
+}
+
+footer {
+  
+}
+
+.footer-items {
+  display: flex;
+  justify-content: space-between;
+}
+
+h6 {
+  text-align: center;
+  color: whitesmoke;
+}
+
+.container-info {
+  background-color: goldenrod;
+  padding: 24px;
+}
+
+.padding-container {
+  padding: 0rem calc((100vw - 1300px) / 2);
+  margin: 24px;
+}
+
+.last-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0rem calc((100vw - 1300px) / 2);
+  margin: 24px;
+}
+
+.depo-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /*espaço entre imagens*/
+  padding: 80px 0;
+  justify-content: center;
+}
+
+.fab {
+  position: fixed; /* Fixa o botão na viewport */
+  bottom: 20px; /* Distância da parte inferior da tela */
+  right: 20px; /* Distância da parte direita da tela */
+  width: 60px; /* Largura do botão */
+  height: 60px; /* Altura do botão */
+  background-color: #25d366; /* Cor de fundo */
+  color: white; /* Cor do texto/ícone */
+  border: none; /* Remove bordas */
+  border-radius: 50%; /* Deixa o botão redondo */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+  cursor: pointer; /* Cursor em formato de "mãozinha" */
+  display: flex; /* Centraliza conteúdo interno */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+}
+
+@media screen and (min-width: 720px) and (max-width: 920px)  {
+  /*media query é uma forma de aplicar estilos condicionalmente com base nas caracteristicas do dispositivo de visualizacao*/
+  .hero-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 720px) {
+
+
+  .hero-container {
+    grid-template-columns: 1fr;
+  }
+
+
+
+  .area-container {
+    grid-template-columns: 1fr;
+
+  }
+
+  .last-container{
+    grid-template-columns: 1fr;
+
+  }
+  
+  #portfolio {
+    grid-template-columns: 1fr;
+  }
+  
+  
+}
